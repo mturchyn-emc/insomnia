@@ -1,0 +1,26 @@
+<!DOCTYPE web-app PUBLIC
+        "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+        "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+    <display-name>Archetype Created Web Application</display-name>
+
+    <filter>
+        <filter-name>TimeLogFilter</filter-name>
+        <filter-class>mturchyn.blackwater.web.filters.TimeLoggerFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>TimeLogFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <servlet>
+        <servlet-name>DocumentRequestDispatcher</servlet-name>
+        <servlet-class>mturchyn.blackwater.web.RequestDispatcher</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DocumentRequestDispatcher</servlet-name>
+        <url-pattern>/api/documents/*</url-pattern>
+    </servlet-mapping>
+
+</web-app>
